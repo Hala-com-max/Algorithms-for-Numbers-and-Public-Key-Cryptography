@@ -1,0 +1,23 @@
+#from ex2 import modinverse
+def modinverse(a, n):
+    for x in range(1, n):
+        if (a * x) % n == 1:
+            return x
+    return None
+
+def crt_general(a, n): #this could be also possible for general CRT for lists 
+#def crtlist(a, n) = ∑ai​⋅Ni​⋅Mi ​modN, while i starts from 1 to k
+    N = 1
+    for ni in n:
+        N *= ni
+
+    result = 0
+
+    for ai, ni in zip(a, n):
+        Ni = N // ni
+        inv = modinverse(Ni, ni)
+        result += ai * Ni * inv
+    return result % N
+print(crt_general([4, 3], [5, 7]))
+#print(crtlist([1,2,3],[5,7,11]))
+

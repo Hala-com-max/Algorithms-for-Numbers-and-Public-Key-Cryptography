@@ -1,0 +1,13 @@
+def modinv(a, p):
+    return pow(a, p-2, p)
+
+def sqroot(a, p):
+    r = pow(a, (p + 1)//4, p)
+    return [r, p - r]
+
+def solvequad(a, b, c, p):
+    delta = (b*b - 4*a*c) % p
+    inv_2a = modinv(2*a, p)
+    roots = [((-b + r)*inv_2a) % p for r in sqroot(delta, p)]
+    return roots
+print(solvequad(2, 4, 8, 19))

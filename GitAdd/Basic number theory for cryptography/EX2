@@ -1,0 +1,6 @@
+def modinverse(a, n):
+    for x in range(1, n):
+        if (a * x) % n == 1:
+            return x
+    return None
+print(modinverse(5, 7))

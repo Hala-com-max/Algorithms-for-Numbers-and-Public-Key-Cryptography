@@ -1,0 +1,6 @@
+def sqroot(a, p):
+    if p % 4 != 3:
+        raise ValueError()
+    r = pow(a, (p + 1) // 4, p)
+    return [r, p - r]
+print(sqroot(7, 19))
