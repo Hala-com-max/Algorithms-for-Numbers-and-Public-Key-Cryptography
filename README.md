@@ -1,1 +1,1 @@
-# Algorithms-for-Numbers-and-Public-Key-Cryptography
+This is basically a Python script that includes normal mathematical computations with large numbers and basic numbers for cryptography!
